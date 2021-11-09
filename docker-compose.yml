@@ -8,16 +8,15 @@ services:
       context: .
     volumes:
       - ./:/code
-      - ~/.gitconfig:/root/.gitconfig
+    ports:
+      - "8888:8888"
 
   # a fully loaded development environment to test new code
   dev:
     <<: *base
-    command: /bin/bash/
+    command: bash
 
   jupyter:
     <<: *base
     entrypoint: "jupyter-lab"
-    ports:
-      - "8888:8888"
     command: ["--ip", "0.0.0.0", "--allow-root"]
