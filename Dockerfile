@@ -27,3 +27,5 @@ RUN pip3.9 install --upgrade pip
 
 # pip install packages
 RUN pip3.9 install -r requirements.txt
+
+RUN jupyter serverextension enable voila && jupyter server extension enable voila
