@@ -23,9 +23,14 @@ RUN apt install -y nodejs
 ENV PIP_NO_CACHE_DIR "true"
 COPY ./requirements*.txt /code/
 WORKDIR /code
+# in this command, we reference "pip3.9", but from this point forward, we can just refer to "pip"
 RUN pip3.9 install --upgrade pip
 
 # pip install packages
-RUN pip3.9 install -r requirements.txt
+RUN pip install -r requirements.txt
 
 RUN jupyter serverextension enable voila && jupyter server extension enable voila
+
+# install and enable ipyslickgrids
+RUN git clone https://github.com/johnomernik/qgrid --depth 1 && cd qgrid && python3.9 setup.py install && pip install qgrid2-1.1.3-py3-none-any.whl
+RUN jupyter nbextension enable --py --sys-prefix qgrid
