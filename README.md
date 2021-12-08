@@ -1,6 +1,6 @@
 # Notebooks
 
-Jupyter notebooks capturing thoughts and explorations.
+A playground for experiments with Jupyter notebooks.
 
 ## Usage
 
