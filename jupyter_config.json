@@ -1,6 +1,7 @@
 {
   "VoilaConfiguration": {
     "enable_nbextensions": true,
-    "strip_sources": false
+    "strip_sources": false,
+    "open_browser": false
   }
 }
